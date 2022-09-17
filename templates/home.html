@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Fraud Detection</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/mainpage.css') }}">
+</head>
+
+<body>
+    <header>
+        <div class="collapse bg-dark" id="navbarHeader">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-md-7 py-4">
+                        <h4 class="text-white">About Project</h4>
+                        <p class="text-muted">This project is designed for the Data Mining and Machine
+                            Learning course at the University of Pisa as a practical implementation of the theories
+                            learned and supervised by Professors Marcelloni & Ducange.
+                        </p>
+                    </div>
+                    <div class="col-sm-4 offset-md-1 py-4">
+                        <h4 class="text-white">Team</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="https://github.com/Mickey374" class="text-white">Michael Asante</a></li>
+                            <li><a href="#" class="text-white">Aida Himmiche</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navbar navbar-dark bg-dark shadow-sm">
+            <div class="container">
+                <a href="#" class="navbar-brand d-flex align-items-center">
+                    <img class="mx-2" src="../static/fraud.png" alt="" width="30" height="25">
+                    <strong>Credit Card Fraud Detection</strong>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
+                    aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="py-1 text-center container">
+            <div class="row py-lg-5">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <h1 class="fw-light">Input Parameters</h1>
+                    <small class="text-muted">To get a prediction of a transaction, input parameters to detect
+                        whether fraud or valid.</small>
+                </div>
+            </div>
+        </section>
+    </main>
+    <main class="form-signin m-auto">
+        <form action="{{url_for('predict')}}" method="post">
+            <div class="row gy-3">
+                <div class="form-floating col-3 mb-3">
+                    <input type="text" name="V1" class="form-control" id="floatingInput" placeholder="V1">
+                    <label for="floatingInput">V1</label>
+                </div>
+                <div class="form-floating  col-3 mb-3">
+                    <input type="text" name="V2" class="form-control" id="floatingInput" placeholder="V2">
+                    <label for="floatingInput">V2</label>
+                </div>
+                <div class="form-floating  col-3 mb-3">
+                    <input type="text" name="V3" class="form-control" id="floatingInput" placeholder="V3">
+                    <label for="floatingInput">V3</label>
+                </div>
+                <div class="form-floating  col-3 mb-3">
+                    <input type="text" name="V4" class="form-control" id="floatingInput" placeholder="V4">
+                    <label for="floatingInput">V4</label>
+                </div>
+            </div>
+            <div class="row gy-3">
+                <div class="form-floating col-3 mb-3">
+                    <input type="text" name="V5" class="form-control" id="floatingInput" placeholder="V5">
+                    <label for="floatingInput">V5</label>
+                </div>
+                <div class="form-floating  col-3 mb-3">
+                    <input type="text" name="V6" class="form-control" id="floatingInput" placeholder="V6">
+                    <label for="floatingInput">V6</label>
+                </div>
+                <div class="form-floating  col-3 mb-3">
+                    <input type="text" name="V7" class="form-control" id="floatingInput" placeholder="V7">
+                    <label for="floatingInput">V7</label>
+                </div>
+                <div class="form-floating  col-3 mb-3">
+                    <input type="text" name="V8" class="form-control" id="floatingInput" placeholder="V8">
+                    <label for="floatingInput">V8</label>
+                </div>
+            </div>
+            <div class="row gy-3">
+                <div class="form-floating col-3 mb-3">
+                    <input type="text" name="V9" class="form-control" id="floatingInput" placeholder="V9">
+                    <label for="floatingInput">V9</label>
+                </div>
+                <div class="form-floating  col-3 mb-3">
+                    <input type="text" name="V10" class="form-control" id="floatingInput" placeholder="V10">
+                    <label for="floatingInput">V10</label>
+                </div>
+                <div class="form-floating  col-3 mb-3">
+                    <input type="text" name="V11" class="form-control" id="floatingInput" placeholder="V11">
+                    <label for="floatingInput">V11</label>
+                </div>
+                <div class="form-floating  col-3 mb-3">
+                    <input type="text" name="V12" class="form-control" id="floatingInput" placeholder="V12">
+                    <label for="floatingInput">V12</label>
+                </div>
+            </div>
+            <div class="row gy-3">
+                <div class="form-floating col-3 mb-3">
+                    <input type="text" name="V13" class="form-control" id="floatingInput" placeholder="V13">
+                    <label for="floatingInput">V13</label>
+                </div>
+                <div class="form-floating  col-3 mb-3">
+                    <input type="text" name="V14" class="form-control" id="floatingInput" placeholder="V14">
+                    <label for="floatingInput">V14</label>
+                </div>
+                <div class="form-floating  col-3 mb-3">
+                    <input type="text" name="V15" class="form-control" id="floatingInput" placeholder="V15">
+                    <label for="floatingInput">V15</label>
+                </div>
+                <div class="form-floating  col-3 mb-3">
+                    <input type="text" name="V16" class="form-control" id="floatingInput" placeholder="V16">
+                    <label for="floatingInput">V16</label>
+                </div>
+            </div>
+            <div class="row gy-3">
+                <div class="form-floating col-3 mb-3">
+                    <input type="text" name="V17" class="form-control" id="floatingInput" placeholder="V17">
+                    <label for="floatingInput">V17</label>
+                </div>
+                <div class="form-floating  col-3 mb-3">
+                    <input type="text" name="V18" class="form-control" id="floatingInput" placeholder="V18">
+                    <label for="floatingInput">V18</label>
+                </div>
+                <div class="form-floating  col-3 mb-3">
+                    <input type="text" name="V19" class="form-control" id="floatingInput" placeholder="V19">
+                    <label for="floatingInput">V19</label>
+                </div>
+                <div class="form-floating  col-3 mb-3">
+                    <input type="text" name="V20" class="form-control" id="floatingInput" placeholder="V20">
+                    <label for="floatingInput">V20</label>
+                </div>
+            </div>
+            <div class="row gy-3">
+                <div class="form-floating col-3 mb-3">
+                    <input type="text" name="V21" class="form-control" id="floatingInput" placeholder="V21">
+                    <label for="floatingInput">V21</label>
+                </div>
+                <div class="form-floating  col-3 mb-3">
+                    <input type="text" name="V22" class="form-control" id="floatingInput" placeholder="V22">
+                    <label for="floatingInput">V22</label>
+                </div>
+                <div class="form-floating  col-3 mb-3">
+                    <input type="text" name="V23" class="form-control" id="floatingInput" placeholder="V23">
+                    <label for="floatingInput">V23</label>
+                </div>
+                <div class="form-floating  col-3 mb-3">
+                    <input type="text" name="V24" class="form-control" id="floatingInput" placeholder="V24">
+                    <label for="floatingInput">V24</label>
+                </div>
+            </div>
+            <div class="row gy-3">
+                <div class="form-floating col-3 mb-3">
+                    <input type="text" name="V25" class="form-control" id="floatingInput" placeholder="V25">
+                    <label for="floatingInput">V25</label>
+                </div>
+                <div class="form-floating  col-3 mb-3">
+                    <input type="text" name="V26" class="form-control" id="floatingInput" placeholder="V26">
+                    <label for="floatingInput">V26</label>
+                </div>
+                <div class="form-floating  col-3 mb-3">
+                    <input type="text" name="V27" class="form-control" id="floatingInput" placeholder="V27">
+                    <label for="floatingInput">V27</label>
+                </div>
+                <div class="form-floating  col-3 mb-3">
+                    <input type="text" name="V28" class="form-control" id="floatingInput" placeholder="V28">
+                    <label for="floatingInput">V28</label>
+                </div>
+            </div>
+
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Predict</button>
+        </form>
+
+        <br>
+        <br>
+        {{prediction}}
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
