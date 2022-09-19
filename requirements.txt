@@ -1,0 +1,4 @@
+numpy==1.23.0
+pickleshare==0.7.5
+Flask==2.2.2
+secure-smtplib
