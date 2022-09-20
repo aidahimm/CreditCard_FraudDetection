@@ -6,4 +6,150 @@
   .form-signin .form-floating:focus-within {
     z-index: 2;
   }
+.transaction_list{
+    overflow-x:auto;
+    width: 70%;
+    float: left;
+}
+
+input {
+    padding-top: 1cm;;
+}
+body {
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.25;
+}
+
+table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin: 1cm;
+    padding: 0;
+    width: 80%;
+    table-layout: fixed;
+    float:left;
+}
+
+.result {
+    margin-top: 3.6cm;
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin-left: 2cm;
+    padding: 0;
+    width: 20%;
+    table-layout: fixed;
+    position: relative;
+}
+
+td.normal {
+    background-color: #e0ffee;
+}
+
+td.fraud{
+    background-color: #ffcccc;
+}
+
+table caption {
+    font-size: 1.5em;
+    margin: .5em 0 .75em;
+}
+
+table tr {
+    background-color: #fdfdfd;
+    border: 1px solid #ddd;
+    padding: .35em;
+}
+
+table th,
+table td {
+    padding: 0.653em;
+    width: 5cm;
+    overflow: scroll;
+}
+
+table th {
+    font-size: .85em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+thead td {
+    font-size: 1em;
+    font-weight: bold;
+    padding: 1cm;
+}
+
+form {
+    position: absolute;
+    float: right;
+    margin-right: 0cm;
+    padding-left: 15.6cm;
+    padding-top: 0.5cm;
+}
+.test{
+    border-radius: 15px;
+    background-color: #0053e3;
+    color: white;
+    padding: 0.5cm;
+    border-width: 0;
+    width: 7cm;
+}
+
+tbody, td, tfoot, th, thead, tr {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 1px;
+}
+
+@media screen and (max-width: 1024px) {
+    table {
+        border: 0;
+        float:left;
+    }
+
+    table caption {
+        font-size: 1.3em;
+    }
+
+    table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    table tr {
+        border-bottom: 3px solid #ddd;
+        display: block;
+        margin-bottom: .625em;
+    }
+
+    table td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: .8em;
+        text-align: right;
+    }
+
+    table td::before {
+        /*
+        * aria-label has no advantage, it won't be read inside a table
+        content: attr(aria-label);
+        */
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    table td:last-child {
+        border-bottom: 0;
+    }
+
+}
   
