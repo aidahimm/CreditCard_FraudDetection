@@ -7,7 +7,7 @@ To run this application we recommend creating and activating a Python virtual en
 python3 -m venv /path/to/env
 source /path/to/env/bin/activate
 ```
-install the necessary packages using the requirements.txt file:
+Install the necessary packages using the requirements.txt file:
 
 ```
 pip install -r requirements.txt
