@@ -6,7 +6,7 @@ import os
 import pandas as pd
 
 app = Flask(__name__)
-model = pickle.load(open('card_fraud_rf.pkl', 'rb'))
+model = pickle.load(open('ModelTesting/card_fraud_rf.pkl', 'rb'))
 
 @app.route('/')
 def home():
@@ -15,7 +15,7 @@ def home():
 @app.route('/predict')
 def predict():
 
-    data = pd.read_csv('demo_transactions.csv')
+    data = pd.read_csv('ModelTesting/demo_transactions.csv')
     list = np.array(data)
 
     predictions = model.predict(list)
