@@ -1,5 +1,5 @@
 # CreditCard_FraudDetection
-A Machine Learning Model integrated with a Flask application
+A Machine Learning Model integrated with a Flask application for the course Data Mining and Machine Learning at University of Pisa.
 
 To run this application we recommend creating and activating a Python virtual environment using the following commands:
 
