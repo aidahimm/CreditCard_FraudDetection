@@ -1,4 +1,4 @@
-# CreditCard_Fraud_WebApp
+# CreditCard_FraudDetection
 A Machine Learning Model integrated with a Flask application
 
 To run this application we recommend creating and activating a Python virtual environment using the following commands:
